@@ -1,0 +1,16 @@
+reg_aladin -ref /home/avitech-pc4/Loc/Medical_Image_Processing/VoxelMorph/imagesTr_NonContrast_norm/p0136.nii.gz \
+            -flo /home/avitech-pc4/Loc/Medical_Image_Processing/VoxelMorph/imagesTr_Contrast_256_norm/p0136_diag_pv_006.nii.gz \
+            -res /home/avitech-pc4/Loc/Medical_Image_Processing/nifty_reg-1.3.9/test.nii.gz \
+            --aff /home/avitech-pc4/Loc/Medical_Image_Processing/nifty_reg-1.3.9/affine_matrix.txt
+
+reg_f3d -ref /home/avitech-pc4/Loc/Medical_Image_Processing/VoxelMorph/imagesTr_NonContrast_norm/p0136.nii.gz \
+        -flo /home/avitech-pc4/Loc/Medical_Image_Processing/VoxelMorph/imagesTr_Contrast_256_norm/p0136_diag_pv_006.nii.gz \
+        -res /home/avitech-pc4/Loc/Medical_Image_Processing/nifty_reg-1.3.9/test_FFD.nii.gz \
+        -aff /home/avitech-pc4/Loc/Medical_Image_Processing/nifty_reg-1.3.9/affine_matrix.txt \
+        -cpp /home/avitech-pc4/Loc/Medical_Image_Processing/nifty_reg-1.3.9/testFFD_cpp.nii.gz
+
+reg_resample -ref /home/avitech-pc4/Loc/Medical_Image_Processing/VoxelMorph/imagesTr_NonContrast_norm/p0136.nii.gz \
+            -flo /home/avitech-pc4/Loc/Medical_Image_Processing/VoxelMorph/labelsTr_Contrast_256_norm/p0136_diag_pv_006.nii.gz \
+            -res /home/avitech-pc4/Loc/Medical_Image_Processing/nifty_reg-1.3.9/test_FFD_label.nii.gz \
+            -cpp /home/avitech-pc4/Loc/Medical_Image_Processing/nifty_reg-1.3.9/testFFD_cpp.nii.gz \
+            -inter 0
